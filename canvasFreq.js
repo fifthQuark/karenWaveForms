@@ -13,7 +13,7 @@ let ang =1
 var k=30
 // ctx.beginPath()
 // ctx.bezierCurveTo(0, 200, 0, 400,300,100,)
-const audioContext = new (window.AudioContext || windoes.webkitAudioContext)()
+const audioContext = new (window.AudioContext || windows.webkitAudioContext)()
 const analyser = audioContext.createAnalyser()
 analyser.fttSize=128
 analyser.minDecibels=-60
