@@ -38,7 +38,7 @@ function test(){
    ctx.beginPath()
    // ctx.fillStyle='black'
    /ctx.clearRect(-10,-10, innerWidth,innerHeight)
-   ctx.strokeStyle="white"
+   ctx.strokeStyle="green"
    ctx.lineWidth=5
    x=innerWidth/2.75
    y=innerHeight/2
