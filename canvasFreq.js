@@ -48,7 +48,7 @@ function test(){
    for (var i=0; i<6; i++){
       ang*=-1
       var lk=ang*dataArray[i]/128*innerHeight/6
-      console.log(dataArray)
+      //console.log(dataArray)
       if (i<3){
          k+=1
       } else{
