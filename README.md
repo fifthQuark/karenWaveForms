@@ -1,1 +1,1 @@
-This repository contains a very simple waveform html and js dislplay. It was created for the Churchill fall musical, Spongebob as karens face. I would recoment using canvasFreq.
+This repository contains a very simple waveform html and js dislplay. It was created for the Churchill fall musical, Spongebob as karens face. I would recommend using canvasFreq, but if waves still works it is an option. canvasDom does not really work it just ends up being based on the volume.
