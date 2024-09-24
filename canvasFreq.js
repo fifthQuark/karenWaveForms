@@ -66,7 +66,7 @@ function test(){
    }
    ctx.lineTo(innerWidth,y)
    ctx.stroke()
-   ctx.endPath()
+   //ctx.endPath()
 }
 //animate()
 //wave()
