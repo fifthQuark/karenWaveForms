@@ -14,7 +14,7 @@ KarenWaveForms is a simple web-based waveform visualizer built using HTML, CSS, 
 
 1. Clone the repository and open the html file in your browser
 2. Open https://fifthquark.github.io/karenWaveForms/
-Note: Chromium based browsers need to install it as a PWA in this moment
+- Note: Chromium based browsers need to install it as a PWA in this moment
 ## License
 
 This project is licensed under the MIT License, allowing for free use, modification, and distribution.
