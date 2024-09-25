@@ -31,10 +31,10 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     });
 var k = 1
 function drawWaveform(){
-   requestAnimationFrame(drawWaveForm)
+   requestAnimationFrame(drawWaveform)
    analyser.getByteFrequencyData(dataArray)
    ctx.beginPath()
-   /ctx.clearRect(-10,-10, innerWidth,innerHeight)
+   ctx.clearRect(-10,-10, innerWidth,innerHeight)
    ctx.strokeStyle="green"
    ctx.lineWidth=5
    x=innerWidth/2.75
