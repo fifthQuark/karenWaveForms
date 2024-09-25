@@ -25,18 +25,15 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     .then(stream => {
         const source = audioContext.createMediaStreamSource(stream);
         source.connect(analyser);
-        //drawWaveform();
     })
     .catch(err => {
         console.error('Error accessing audio input:', err);
     });
 var k = 1
-function test(){
+function drawWaveform(){
    requestAnimationFrame(test)
    analyser.getByteFrequencyData(dataArray)
-   //analyser.getByteTimeDomainData(dataArray)
    ctx.beginPath()
-   // ctx.fillStyle='black'
    /ctx.clearRect(-10,-10, innerWidth,innerHeight)
    ctx.strokeStyle="green"
    ctx.lineWidth=5
@@ -48,26 +45,19 @@ function test(){
    for (var i=0; i<6; i++){
       ang*=-1
       var lk=ang*dataArray[i]/128*innerHeight/6
-      //console.log(dataArray)
       if (i<3){
          k+=1
       } else{
          k-=1
       }
       k=1
-      //ctx.quadraticCurveTo(x+innerWidth/36,y+ang*dataArray[i]/128.0*innerHeight/2,x+innerWidth/18,y)
       ctx.lineTo(x+innerWidth/36, y+lk*k)
       ctx.moveTo(x+innerWidth/36, y+lk*k)
       ctx.lineTo(x+innerWidth/18,y)
-      //ctx.lineTo()
       x+=innerWidth/18
-      //y+=75
       ctx.moveTo(x,y)
    }
    ctx.lineTo(innerWidth,y)
    ctx.stroke()
-   //ctx.endPath()
 }
-//animate()
-//wave()
-test()
+drawWaveform()
