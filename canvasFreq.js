@@ -66,3 +66,4 @@ export function wavey(){
     start()
     return drawWaveform()
 }
+wavey()
