@@ -1,3 +1,4 @@
+export function start(){
 var canvas = document.getElementById("waveform")
 var ctx = canvas.getContext("2d")
 //ctx.fillStyle="green"
@@ -30,6 +31,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
         console.error('Error accessing audio input:', err);
     });
 var k = 1
+}
 export function drawWaveform(){
    requestAnimationFrame(drawWaveform)
    analyser.getByteFrequencyData(dataArray)
@@ -60,4 +62,7 @@ export function drawWaveform(){
    ctx.lineTo(innerWidth,y)
    ctx.stroke()
 }
-drawWaveform()
+export function wavey(){
+    start()
+    return drawWaveform()
+}
