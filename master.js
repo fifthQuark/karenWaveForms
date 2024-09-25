@@ -1,2 +1,2 @@
-from drawWaveform import canvasFreq
+import drawWaveform from canvasFreq.js
 drawWaveForm()
