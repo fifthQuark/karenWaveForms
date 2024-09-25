@@ -25,7 +25,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     .then(stream => {
         const source = audioContext.createMediaStreamSource(stream);
         source.connect(analyser);
-        drawWaveform();
+        //drawWaveform();
     })
     .catch(err => {
         console.error('Error accessing audio input:', err);
