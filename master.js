@@ -1,2 +1,2 @@
-import {drawWaveform} from ./canvasFreq.js
+import {drawWaveform} from './canvasFreq.js'
 drawWaveform()
