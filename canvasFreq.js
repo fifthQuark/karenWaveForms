@@ -31,7 +31,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     });
 var k = 1
 function drawWaveform(){
-   requestAnimationFrame(test)
+   requestAnimationFrame(drawWaveForm)
    analyser.getByteFrequencyData(dataArray)
    ctx.beginPath()
    /ctx.clearRect(-10,-10, innerWidth,innerHeight)
