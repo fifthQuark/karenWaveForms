@@ -30,7 +30,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
         console.error('Error accessing audio input:', err);
     });
 var k = 1
-export default function drawWaveform(){
+export function drawWaveform(){
    requestAnimationFrame(drawWaveform)
    analyser.getByteFrequencyData(dataArray)
    ctx.beginPath()
