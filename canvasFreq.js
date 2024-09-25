@@ -60,4 +60,4 @@ export function drawWaveform(){
    ctx.lineTo(innerWidth,y)
    ctx.stroke()
 }
-//drawWaveform()
+drawWaveform()
