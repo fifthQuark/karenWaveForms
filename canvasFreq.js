@@ -31,6 +31,10 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     });
 var k = 1
 function drawWaveform(){
+   if (rec !="w"){
+      return 0
+   }
+   var k = 1
    requestAnimationFrame(drawWaveform)
    analyser.getByteFrequencyData(dataArray)
    ctx.beginPath()
@@ -59,5 +63,25 @@ function drawWaveform(){
    }
    ctx.lineTo(innerWidth,y)
    ctx.stroke()
+   
 }
-drawWaveform()
+function icon(){
+   ctx.clearRect(-10,-10, innerWidth,innerHeight)
+   const logo = new Image();
+   logo.addEventListener("load", () => {
+      ctx.drawImage(logo, 0, 0);
+    });    
+   logo.src="icon.svg"
+}
+var rec = "w"
+document.addEventListener('keydown', (event) => {
+   rec=event.key
+  if (rec=="w"){
+   drawWaveform()
+  }
+  if (rec=="l"){
+   icon()
+  }
+});
+
+//drawWaveform()
