@@ -12,7 +12,6 @@ canvas {
     width: auto;
     height: auto;
     justify-content: center;
-    position: relative;
     padding: 200px, 200px;
     display: block;
     border:gray;
@@ -22,4 +21,5 @@ canvas {
     display: inline-block;
     background-color: lightgray;
     font-size: large ;
+    float: left, bottom;
 }
