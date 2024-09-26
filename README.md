@@ -7,6 +7,9 @@ KarenWaveForms is a simple web-based waveform visualizer built using HTML, CSS, 
 - **Waveform Visualization**: Uses HTML5's `<canvas>` element to display waveform graphics, generated based on audio frequency data.
 - **Two Visualization Options**:
   - **canvasFreq.js**: The recommended file to use for waveform visualizations.
+    - Press R for a red waveform
+    - Press G for a green waveform
+    - Press L for a logo
   - **canvasDom.js**: An alternative, though not fully functional, as it primarily responds to volume rather than creating accurate frequency-based visuals.
 - **Simple Setup**: Just link the relevant files (HTML, CSS, JavaScript) to get a basic waveform visual on a webpage.
 
