@@ -5,8 +5,12 @@ canvas.height = window.innerHeight;
 //The initial x and y values for the waveform
 var x =0
 var y= innerHeight/2
+//The waveform color and key
+var color ="green"
+var initKey="g"
 //The keypress is for switching between the faces
 var rec="w"
+var ang =1
 const audioContext = new (window.AudioContext || window.webkitAudioContext)()
 const analyser = audioContext.createAnalyser()
 analyser.fttSize=128
@@ -24,16 +28,16 @@ navigator.mediaDevices.getUserMedia({ audio: true })
         console.error('Error accessing audio input:', err);
     });
 //Karens default face
-function drawWaveform(color, key){
+function drawWaveform(){
    var k = 1
-   if (rec !=key){
+   if (rec !=initKey){
       return 0
    }
-   requestAnimationFrame(drawWaveform(color, key))
+   requestAnimationFrame(drawWaveform)
    analyser.getByteFrequencyData(dataArray)
    ctx.beginPath()
    ctx.clearRect(0,0, innerWidth,innerHeight)
-   ctx.strokeStyle="green"
+   ctx.strokeStyle=color
    ctx.lineWidth=5
    x=innerWidth/2.75
    y=innerHeight/2
@@ -70,8 +74,15 @@ function icon(){
 }
 document.addEventListener('keydown', (event) => {
    rec=event.key
-  if (rec=="w"){
-   drawWaveform("green", "w")
+  if (rec=="g"){
+   color="green"
+   initKey="g"
+   drawWaveform()
+  }
+  if (rec=="r"){
+   color="red"
+   initKey="r"
+   drawWaveform()
   }
   if (rec=="l"){
    icon()
