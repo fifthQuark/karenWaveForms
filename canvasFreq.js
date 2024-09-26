@@ -38,7 +38,7 @@ function drawWaveform(){
    requestAnimationFrame(drawWaveform)
    analyser.getByteFrequencyData(dataArray)
    ctx.beginPath()
-   ctx.clearRect(-10,-10, innerWidth,innerHeight)
+   ctx.clearRect(0,0, innerWidth,innerHeight)
    ctx.strokeStyle="green"
    ctx.lineWidth=5
    x=innerWidth/2.75
