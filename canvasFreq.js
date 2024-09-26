@@ -24,12 +24,12 @@ navigator.mediaDevices.getUserMedia({ audio: true })
         console.error('Error accessing audio input:', err);
     });
 //Karens default face
-function drawWaveform(){
+function drawWaveform(color, key){
    var k = 1
-   if (rec !="w"){
+   if (rec !=key){
       return 0
    }
-   requestAnimationFrame(drawWaveform)
+   requestAnimationFrame(drawWaveform(color, key))
    analyser.getByteFrequencyData(dataArray)
    ctx.beginPath()
    ctx.clearRect(0,0, innerWidth,innerHeight)
@@ -71,7 +71,7 @@ function icon(){
 document.addEventListener('keydown', (event) => {
    rec=event.key
   if (rec=="w"){
-   drawWaveform()
+   drawWaveform("green", "w")
   }
   if (rec=="l"){
    icon()
