@@ -6,3 +6,20 @@ html {
 canvas {
     background-color: black;
 }
+.button{
+    text-align: center;
+    align-self: center;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    position: relative;
+    padding: 200px, 200px;
+    display: block;
+    border:gray;
+    border-radius: 9px;
+    border-color: gray;
+    color: black;
+    display: inline-block;
+    background-color: lightgray;
+    font-size: large ;
+}

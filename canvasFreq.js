@@ -27,6 +27,8 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     .catch(err => {
         console.error('Error accessing audio input:', err);
     });
+
+
 //Karens default face
 function drawWaveform(){
    var k = 1
@@ -72,8 +74,19 @@ function icon(){
     });    
    logo.src="icon.svg"
 }
+document.querySelector('button').addEventListener('click', function() {
+   audioContext.resume().then(() => {
+     console.log('Playback resumed successfully');
+   });
+   var button = document.getElementById('start')
+   button.style.display="none"
+ });
+ 
 document.addEventListener('keydown', (event) => {
    rec=event.key
+   if (rec=="1"){
+      audioContext.resume()
+   }
   if (rec=="g"){
    color="green"
    initKey="g"
