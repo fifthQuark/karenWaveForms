@@ -40,7 +40,7 @@ function drawWaveform(){
    ctx.beginPath()
    ctx.clearRect(0,0, innerWidth,innerHeight)
    ctx.strokeStyle=color
-   ctx.lineWidth=5
+   ctx.lineWidth=10
    x=innerWidth/2.75
    y=innerHeight/2
    ctx.moveTo(0,y)
