@@ -3,6 +3,7 @@ var ctx = canvas.getContext("2d")
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 //The initial x and y values for the waveform
+document.cookie="initX=;initY=;initAng=0;fttSize=;minDecibels=;smoothing=;channel=;width=,"
 var x =0
 var y= innerHeight/2
 //The waveform color and key
@@ -54,7 +55,6 @@ function drawWaveform(){
       } else{
          k-=1
       }
-      k=1
       ctx.lineTo(x+innerWidth/36, y+lk*k)
       ctx.moveTo(x+innerWidth/36, y+lk*k)
       ctx.lineTo(x+innerWidth/18,y)
