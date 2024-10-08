@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    text-align: center;
+    color: white;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.slider-container {
+    margin-bottom: 20px;
+}
+
+.slider-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+html {
+    overflow: hidden;
+    text-decoration-color: white;
+    background-color: rgb(65, 65, 65);
+}
+
+canvas {
+    background-color: black;
+}
+.button{
+    background-color: white;
+    border-radius: 16px;
+    color: black;
+    size: 50px;
+}
