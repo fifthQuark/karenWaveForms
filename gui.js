@@ -34,16 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 document.querySelector('button').addEventListener('click', function() {
-    audioContext.resume().then(() => {
-      console.log('Playback resumed successfully');
-    });
+
     
     let str=""
     for(var i =0; i<6; i++){
-        str += options[i] + "=" + document.getElementById("slider" + i).value + ";"
+        str += i + "=" + document.getElementById("slider" + i).value + ";"
     }
     document.cookie=str
     var button = document.getElementById('page2')
-    button.style.display="none"
-    window.location.href="index.html"
+    window.location.href="waveform.html"
   });

@@ -11,7 +11,7 @@ var initKey="g"
 //The keypress is for switching between the faces
 var rec="w"
 var ang =1
-//const audioContext = new (window.AudioContext || window.webkitAudioContext)()
+const audioContext = new (window.AudioContext || window.webkitAudioContext)()
 const analyser = audioContext.createAnalyser()
 analyser.fttSize=128
 analyser.minDecibels=-60
@@ -80,7 +80,7 @@ document.querySelector('button').addEventListener('click', function() {
    audioContext.resume().then(() => {
      console.log('Playback resumed successfully');
    });
-   var button = document.getElementById('start')
+   var button = document.getElementById('go')
    button.style.display="none"
  });
 
