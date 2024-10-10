@@ -2,6 +2,7 @@ var canvas = document.getElementById("waveform")
 var ctx = canvas.getContext("2d")
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+console.log(document.cookie)
 //The initial x and y values for the waveform
 var x =0
 var y= innerHeight/2
@@ -80,8 +81,8 @@ document.querySelector('button').addEventListener('click', function() {
    audioContext.resume().then(() => {
      console.log('Playback resumed successfully');
    });
-   var button = document.getElementById('go')
-   button.style.display="none"
+   var press = document.getElementById('start')
+   press.style.display="none"
  });
 
 document.addEventListener('keydown', (event) => {
