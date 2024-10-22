@@ -18,7 +18,7 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)()
 const analyser = audioContext.createAnalyser()
 analyser.fttSize=vars[1]
 analyser.minDecibels=vars[2]
-analyser.smoothingTimeConstant=vars[3]/10.0
+analyser.smoothingTimeConstant=vars[3]/10
 analyser.channelCount=vars[4]
 const bufferLength = analyser.frequencyBinCount
 const dataArray = new Uint8Array(bufferLength)
@@ -35,7 +35,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
 //Karens default face
 function drawWaveform(){
    var k = 1
-   var lk = vars[0]
+   var scale = vars[0]
    if (rec !=initKey){
       return 0
    }
@@ -48,8 +48,8 @@ function drawWaveform(){
    x=innerWidth/2.75
    y=innerHeight/2
    ctx.moveTo(0,y)
-   ctx.lineTo(x,y)
-   ctx.moveTo(x,y)
+   ctx.lineTo(x+1,y)
+   ctx.moveTo(x+1,y)
    for (var i=0; i<6; i++){
       ang*=-1
       var lk=ang*dataArray[i]/128*innerHeight/6
@@ -58,11 +58,11 @@ function drawWaveform(){
       } else{
          k-=1
       }
-      ctx.lineTo(x+innerWidth/36, y+lk*k)
-      ctx.moveTo(x+innerWidth/36, y+lk*k)
-      ctx.lineTo(x+innerWidth/18,y)
+      ctx.lineTo(x+innerWidth/36, y+lk*k*scale)
+      ctx.moveTo(x+innerWidth/36-1, y+lk*k*scale)
+      ctx.lineTo(x+innerWidth/18-1,y)
       x+=innerWidth/18
-      ctx.moveTo(x,y)
+      ctx.moveTo(x-2,y)
    }
    ctx.lineTo(innerWidth,y)
    ctx.stroke()
