@@ -10,9 +10,9 @@ KarenWaveForms is a simple web-based waveform visualizer built using HTML, CSS, 
     - Press R for a red waveform
     - Press G for a green waveform
     - Press L for a logo
+    - Press B to go to back to the GUI page
   - **canvasDom.js**: An alternative, though not fully functional, as it primarily responds to volume rather than creating accurate frequency-based visuals.
 - **Simple Setup**: Just link the relevant files (HTML, CSS, JavaScript) to get a basic waveform visual on a webpage.
-
 ## Usage
 
 1. Clone the repository and open the html file in your browser
