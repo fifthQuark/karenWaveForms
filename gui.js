@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let options = ["Scale", "fft Size", "min Decibles", "Smoothing", "Channels", "Width"]
     let mins=[1,16, -200, 1,1,1]
     let maxs=[100,2048,100,10,16,100]
-    let values = [1, 128, -60,8,6, 20]
+    let values = [1, 128, -60,8,6, 10]
     // Function to create a slider with label
     function createSlider(id, label,min,max,value) {
         const sliderContainer = document.createElement('div');
@@ -35,12 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.querySelector('button').addEventListener('click', function() {
 
-    
-    let str=""
+    var strings=""
     for(var i =0; i<6; i++){
-        str += i + "=" + document.getElementById("slider" + i).value + ";"
+        strings += document.getElementById("slider" + i).value + ","
     }
-    document.cookie=str
+    document.cookie = strings + ";" + "cookieMonster; SameSite=None; secure"
     var button = document.getElementById('page2')
     window.location.href="waveform.html"
   });

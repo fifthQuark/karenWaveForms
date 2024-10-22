@@ -2,8 +2,10 @@ var canvas = document.getElementById("waveform")
 var ctx = canvas.getContext("2d")
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-console.log(document.cookie)
+console.log("Cookie: " + document.cookie)
 //The initial x and y values for the waveform
+var vars = document.cookie.split(",")
+console.log(vars)
 var x =0
 var y= innerHeight/2
 //The waveform color and key
@@ -14,10 +16,10 @@ var rec="w"
 var ang =1
 const audioContext = new (window.AudioContext || window.webkitAudioContext)()
 const analyser = audioContext.createAnalyser()
-analyser.fttSize=128
-analyser.minDecibels=-60
-analyser.smoothingTimeConstant=.8
-analyser.channelCount=6
+analyser.fttSize=vars[1]
+analyser.minDecibels=vars[2]
+analyser.smoothingTimeConstant=vars[3]/10.0
+analyser.channelCount=vars[4]
 const bufferLength = analyser.frequencyBinCount
 const dataArray = new Uint8Array(bufferLength)
 navigator.mediaDevices.getUserMedia({ audio: true })
@@ -33,6 +35,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
 //Karens default face
 function drawWaveform(){
    var k = 1
+   var lk = vars[0]
    if (rec !=initKey){
       return 0
    }
@@ -41,7 +44,7 @@ function drawWaveform(){
    ctx.beginPath()
    ctx.clearRect(0,0, innerWidth,innerHeight)
    ctx.strokeStyle=color
-   ctx.lineWidth=10
+   ctx.lineWidth=vars[5]
    x=innerWidth/2.75
    y=innerHeight/2
    ctx.moveTo(0,y)
@@ -102,5 +105,8 @@ document.addEventListener('keydown', (event) => {
   }
   if (rec=="l"){
    icon()
+  }
+  if (rec=="b"){
+   window.location.href="index.html"
   }
 });
