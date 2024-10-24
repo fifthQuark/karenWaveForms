@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sliderWrapper = document.getElementById('slider-wrapper');
     let options = ["Scale", "fft Size", "min Decibles", "Smoothing", "Channels", "Width"]
     let mins=[1,16, -200, 1,1,1]
-    let maxs=[100,2048,100,10,16,100]
+    let maxs=[10,2048,100,10,16,100]
     let values = [1, 128, -60,8,6, 10]
     // Function to create a slider with label
     function createSlider(id, label,min,max,value) {
@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Create 6 sliders
     var cookie = loadCookie()
-    if (cookie[0] != "" || cookie[0] != null || cokkie[0]!=0){
+    console.log(cookie)
+    if (cookie[0] != ""){
         values=cookie
     }
     for (var i = 0; i <6; i++){
