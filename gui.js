@@ -28,10 +28,19 @@ document.addEventListener("DOMContentLoaded", function () {
         sliderContainer.appendChild(slider);
         sliderWrapper.appendChild(sliderContainer);
     }
+    function loadCookie(){
+        return document.cookie.split(",")
+
+    }
     // Create 6 sliders
-    for (var i = 0; i <6; i++) {
+    var cookie = loadCookie()
+    if (cookie[0] != "" || cookie[0] != null || cokkie[0]!=0){
+        values=cookie
+    }
+    for (var i = 0; i <6; i++){
         createSlider(i, options[i], mins[i],maxs[i],values[i]);
     }
+
 });
 document.querySelector('button').addEventListener('click', function() {
 
