@@ -35,7 +35,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
 //Karens default face
 function drawWaveform(){
    var k = 1
-   var scale = vars[0]
+   var scale = vars[0]/10.0
    if (rec !=initKey){
       return 0
    }
@@ -58,12 +58,8 @@ function drawWaveform(){
       } else{
          k-=1
       }
-      var height = y+lk*k*scale
-      if (height > innerHeight-20){
-         height = innerHeight-20
-      }
-      ctx.lineTo(x+innerWidth/36, height)
-      ctx.moveTo(x+innerWidth/36-1, height)
+      ctx.lineTo(x+innerWidth/36, y+lk*k*scale)
+      ctx.moveTo(x+innerWidth/36-1, y+lk*k*scale)
       ctx.lineTo(x+innerWidth/18-1,y)
       x+=innerWidth/18
       ctx.moveTo(x-2,y)

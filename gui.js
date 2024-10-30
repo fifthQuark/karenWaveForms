@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sliderWrapper = document.getElementById('slider-wrapper');
     let options = ["Scale", "fft Size", "min Decibles", "Smoothing", "Channels", "Width"]
     let mins=[1,4, -200, 1,1,1]
-    let maxs=[10,2048,100,10,16,100]
+    let maxs=[100,2048,100,10,16,100]
     let values = [1, 128, -60,8,6, 55]
     // Function to create a slider with label
     function createSlider(id, label,min,max,value) {
