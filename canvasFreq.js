@@ -58,8 +58,12 @@ function drawWaveform(){
       } else{
          k-=1
       }
-      ctx.lineTo(x+innerWidth/36, y+lk*k*scale)
-      ctx.moveTo(x+innerWidth/36-1, y+lk*k*scale)
+      var height = y+lk*k*scale
+      if (height > innerHeight-20){
+         height = innerHeight-20
+      }
+      ctx.lineTo(x+innerWidth/36, height)
+      ctx.moveTo(x+innerWidth/36-1, height)
       ctx.lineTo(x+innerWidth/18-1,y)
       x+=innerWidth/18
       ctx.moveTo(x-2,y)
