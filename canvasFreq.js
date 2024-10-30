@@ -45,21 +45,28 @@ function drawWaveform(){
    ctx.clearRect(0,0, innerWidth,innerHeight)
    ctx.strokeStyle=color
    ctx.lineWidth=vars[5]
-   x=innerWidth/2.75
+   x=innerWidth/16
    y=innerHeight/2
+   y2=0
    ctx.moveTo(0,y)
    ctx.lineTo(x+1,y)
    ctx.moveTo(x+1,y)
-   for (var i=0; i<6; i++){
+   for (var i=0; i<16; i++){
       ang*=-1
-      var lk=ang*dataArray[i]/128*innerHeight/6
-      if (i<3){
+      var lk=dataArray[i]/128*innerHeight/6
+      if (i<8){
          k+=1
       } else{
          k-=1
       }
-      ctx.lineTo(x+innerWidth/36, y+lk*k*scale)
-      ctx.moveTo(x+innerWidth/36-1, y+lk*k*scale)
+      y2=y+lk*k*scale
+      if (innerHeight>y2 >0){
+         y2=y + lk*ang*k*scale
+      }else{
+         y2=innerHeight/2+ ang*innerHeight/2
+      }
+      ctx.lineTo(x+innerWidth/36,y2)
+      ctx.moveTo(x+innerWidth/36-1,y2)
       ctx.lineTo(x+innerWidth/18-1,y)
       x+=innerWidth/18
       ctx.moveTo(x-2,y)
