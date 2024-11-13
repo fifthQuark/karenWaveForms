@@ -99,21 +99,26 @@ document.addEventListener('keydown', (event) => {
    rec=event.key
    if (rec=="1"){
       audioContext.resume()
+      rec="g"
    }
-  if (rec=="g"){
+  else if (rec=="g"){
    color="green"
    initKey="g"
    drawWaveform()
   }
-  if (rec=="r"){
+  else if (rec=="r"){
    color="red"
    initKey="r"
    drawWaveform()
   }
-  if (rec=="l"){
+  else if (rec=="l"){
    icon()
   }
-  if (rec=="b"){
+  else if (rec=="b"){
    window.location.href="index.html"
+  } else{
+   color=color
+   initKey=key
+   drawWaveform()
   }
 });
